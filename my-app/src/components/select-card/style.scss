@@ -1,0 +1,8 @@
+.card input[type="radio"]:checked + .card-body {
+    background-color: #e9ecef;
+  }
+  .card img {
+    width:50px;
+    max-width: 100%;
+    height: auto;
+  }
