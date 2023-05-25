@@ -1,0 +1,46 @@
+@import "../variables.scss";
+
+.form__input {
+  width: 100%;
+  padding: 0.5rem 0;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  &:focus{
+    border-color: #ababab;
+    outline: none;
+  }
+}
+
+.form__label {
+    font-size: 14px;
+    padding:.5rem 0;
+    margin:1rem 0 0 0;
+    color:$primary-color;
+}
+
+.form__title{
+    font-size: 18px;
+    font-family: $font-family-bold;
+    color:$primary-color;
+    margin-bottom:0.5rem;
+}
+
+.form__description{
+    font-size: 14px;
+    color:$neutral-color;
+    margin: .5rem 0 1rem 0;
+}
+
+.form__checkbox{
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 8px;
+}
+.form__checkbox:checked {
+    background-color: $secondary-color;
+    color: $secondary-color;
+  }
+

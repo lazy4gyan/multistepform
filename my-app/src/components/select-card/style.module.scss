@@ -1,0 +1,60 @@
+// .card input[type="radio"]:checked + .card-body {
+//     background-color: #e9ecef;
+//   }
+//   .card img {
+//     width:50px;
+//     max-width: 100%;
+//     height: auto;
+//   }
+@import "../../variables.scss";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem 0 1rem;
+  border: 1px solid $light-gray-color;
+  border-radius: 8px;
+
+  .card__img {
+    width: 40px;
+    height: 40px;
+    margin-right: 2.5rem;
+  }
+
+  .card__body {
+    margin-top: 2rem;
+    .card__title {
+      font-size: 16;
+      margin-bottom: 0.5rem;
+      color:$primary-color;
+    }
+
+    .card__text {
+      font-size: 12px;
+      margin-bottom: 0.5rem;
+      color: $neutral-color;
+    }
+
+    .mb{
+      margin-bottom: .5rem;
+    }
+
+    .card__offer {
+      font-size: 12px;
+      margin: 0.5rem 1rem 1rem 0;
+      white-space: nowrap;
+      color: $secondary-color;
+    }
+  }
+}
+
+
+.radio__input {
+  display: none;
+}
+input[type="radio"]:checked + .card {
+    background-color: red;
+  }
+
+  // card selection is also not working
+  // card bottom spacing

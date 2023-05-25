@@ -1,0 +1,13 @@
+.layout {
+    display: flex;
+    flex-direction: row;
+    height:80vh;
+    margin:3rem 0;
+    background-color: white;
+  }
+  
+  @media (max-width: 768px) {
+    .layout {
+      flex-direction: column;
+    }
+  }

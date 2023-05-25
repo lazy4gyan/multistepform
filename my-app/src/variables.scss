@@ -1,0 +1,32 @@
+$primary-color: hsl(213, 96%, 18%);
+$secondary-color: hsl(243, 100%, 62%);
+$accent-color: hsl(228, 100%, 84%);
+$light-color: hsl(206, 94%, 87%);
+$error-color: hsl(354, 84%, 57%);
+
+$neutral-color: hsl(231, 11%, 63%);
+$light-gray-color: hsl(229, 24%, 87%);
+$magnolia-color: hsl(217, 100%, 97%);
+$alabaster-color: hsl(231, 100%, 99%);
+$white-color: hsl(0, 0%, 100%);
+
+$font-size-body: 16px;
+$font-family-bold: 'UbuntuBold', sans-serif;
+$font-family-medium: 'UbuntuMedium', sans-serif;
+$font-family-regular: 'UbuntuRegular', sans-serif;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+@font-face {
+    font-family: 'UbuntuBold';
+    src: url('./assets/fonts/Ubuntu-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'UbuntuMedium';
+    src: url('./assets/fonts/Ubuntu-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'UbuntuRegular';
+    src: url('./assets/fonts/Ubuntu-Regular.ttf') format('truetype');
+}

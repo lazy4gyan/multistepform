@@ -1,13 +1,14 @@
 /* eslint-disable no-unsafe-optional-chaining */
 /* eslint-disable react/prop-types */
 import React from "react";
+import styles from "./style.module.scss"
  
 export const Field = ({ children, label, error }) => {
   const id = getChildId(children);
  
   return (
-    <div className="col-sm-12 mb-3">
-      <label htmlFor={id} className="form-label">
+    <div>
+      <label htmlFor={id} className={styles.form__label}>
         {label}
       </label>
       {children}

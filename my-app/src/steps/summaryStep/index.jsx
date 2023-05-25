@@ -21,23 +21,50 @@ const SummaryPage = () => {
   const { handleSubmit, getValues } = useForm({ defaultValues: state });
   const navigate = useNavigate();
 
-  const submitData = (data) => {
-    console.info(data);
-    // Submit data to the server
-  };
-  // console.log(get("planType"))
-  // console.log(state);
-
   const subscription = state ? planOptions.find(
     (plan) => plan.value === state.selectPlan
   ):null;
-
   const addOns = addOnPlanOptions.filter(plan => state[plan.code] === true);
   const addOnPrice = addOns.reduce((total,plan)=>{
     return total + Number(plan.value);
   },0)
-  console.log(addOnPrice)
   const total = Number(state.selectPlan) + addOnPrice;
+
+  const submitData = (data) => {
+    console.info(data);
+    // Submit data to the server
+  };  
+
+  const data = [
+    {
+      title: "Personal info",
+      url: "/",
+      items: [
+        { name: "name", value: state.name, required: true },
+        { name: "email", value: state.email, required: true },
+        { name: "phoneNumber", value: state.phoneNumber, required: true },
+      ],
+    },
+    {
+      title: "Select Plan",
+      url: "/selectplan",
+      items: [
+        { name: "selectPlan", value: state.selectPlan, required: true},
+        { name: "planType", value: state.planType },
+      ],
+    },
+    {
+      title: "Add-on's",
+      url: "/addon",
+      items: [{ name: "online", value: state.online },
+      { name: "large", value: state.large },
+      { name: "custom", value: state.custom }],
+    },
+  ];
+
+  const disableSubmit = data.some((section) =>
+    section.items.some((item) => item.required && !item.value)
+  );
 
 
   return (
@@ -81,7 +108,7 @@ const SummaryPage = () => {
       )}
       
       <div className="d-flex justify-content-start">
-        <Button>Confirm</Button>
+        <Button >Confirm</Button>
       </div>
     </Form>
   );

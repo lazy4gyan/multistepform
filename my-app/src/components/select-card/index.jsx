@@ -1,46 +1,17 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/display-name */
 // /* eslint-disable react/prop-types */
-
-// function Card({ image, title, description, price, ...props }) {
-//   return (
-//     <label>
-//       <input type="radio" {...props} />
-//       <div className="card">
-//         <img src={image} alt={title} />
-//         <h3>{title}</h3>
-//         <p>{description}</p>
-//         <p>{price}</p>
-//       </div>
-//     </label>
-//   );
-// }
-// export default Card;
 import  { forwardRef } from 'react';
-
-// const Card = forwardRef(({ image, title, description, price, ...props }, ref) => {
-//   return (
-//     <div className="card">
-//       <img src={image} className="card-img-top" alt={title} />
-//       <div className="card-body">
-//         <h5 className="card-title">{title}</h5>
-//         <p className="card-text">{description}</p>
-//         <p className="card-text">{price}</p>
-//         <input type="radio" className="form-check-input d-none" ref={ref} {...props} />
-//       </div>
-//     </div>
-//   );
-// });
-import "./style.scss"
-const Card = forwardRef(({ image, title, description, price, ...props }, ref) => {
+import styles from "./style.module.scss"
+const Card = forwardRef(({ image, title, description, price,isYearly, ...props }, ref) => {
     return (
-      <label className="card">
-        <input type="radio" className="form-check-input d-none" ref={ref} {...props} />
-        <img src={image} className="card-img-top" alt={title} />
-        <div className="card-body">
-          <h5 className="card-title">{title}</h5>
-          <p className="card-text">{description}</p>
-          <p className="card-text">{price}</p>
+      <label className={styles.card}>
+        <input type="radio" className={styles.radio__input} ref={ref} {...props} />
+        <img src={image} className={styles.card__img} alt={title} />
+        <div className={styles.card__body}>
+          <h5 className={styles.card__title}>{title}</h5>
+          <p className={`${styles.card__text} ${isYearly === false ? styles.mb : ''}`}>{isYearly ? `$${price * 10}/yr`:`$${price}/mo`}</p>
+          {isYearly && <p className={styles.card__offer}>{description}</p>}
         </div>
       </label>
     );
