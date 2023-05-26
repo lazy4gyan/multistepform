@@ -2,10 +2,17 @@
 import { useForm } from "react-hook-form";
 import { useAppState } from "../../state";
 import { useNavigate } from "react-router-dom";
-import { Button, Field, Form, Input, TitelDescription, Title } from "../../components";
+import {
+  Button,
+  Field,
+  Form,
+  Input,
+  TitelDescription,
+  Title,
+} from "../../components";
 import { DevTool } from "@hookform/devtools";
 import { forwardRef } from "react";
-import styles from "./style.module.scss"
+import styles from "./style.module.scss";
 
 const InformationPage = forwardRef((props, ref) => {
   const [state, setState] = useAppState();
@@ -26,16 +33,12 @@ const InformationPage = forwardRef((props, ref) => {
     <section className="form__container">
       <Form onSubmit={handleSubmit(saveData)}>
         <Title>Personal info</Title>
-        <TitelDescription>Please provide your name, email address, and phone number.</TitelDescription>
-        <Field
-          label="Name"
-          error={errors?.name}
-        >
+        <TitelDescription>
+          Please provide your name, email address, and phone number.
+        </TitelDescription>
+        <Field label="Name" error={errors?.name}>
           <Input
-            {...register(
-              "name"
-              , { required: "This field is required" }
-            )}
+            {...register("name", { required: "This field is required" })}
             id="name"
           />
         </Field>
@@ -65,8 +68,9 @@ const InformationPage = forwardRef((props, ref) => {
             id="phone-number"
           />
         </Field>
-
-        <Button>Next</Button>
+        <section className="button__wrapper align__right">
+          <Button>Next Step</Button>
+        </section>
       </Form>
       <DevTool control={control} />
     </section>

@@ -1,6 +1,7 @@
 /* eslint-disable react/display-name */
 /* eslint-disable react/prop-types */
 import { forwardRef, useImperativeHandle, useRef } from "react";
+import styles from "./style.module.scss"
 
 export const Button = forwardRef(
   ({ children, variant = "primary", ...props }, ref) => {
@@ -12,8 +13,11 @@ export const Button = forwardRef(
       },
     }));
 
+    // const variant = 'primary';
+const className = styles[`btn-${variant}`];
+
     return (
-      <button className={`btn btn-${variant}`} {...props} ref={buttonRef}>
+      <button className={`${styles.btn} ${className}`} {...props} ref={buttonRef}>
         {children}
       </button>
     );

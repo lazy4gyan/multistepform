@@ -1,20 +1,39 @@
-.box{
+@import "../../variables.scss";
+.box {
   margin-top: 2rem;
   display: grid;
   grid-template-columns: 1fr;
-  gap:1rem;
+  gap: 1rem;
 }
-.checkbox__container{
+.checkbox__container {
   display: flex;
   align-items: center;
-  gap:1rem;
-  border:1px solid #ccc;
-  padding:1rem;
+  gap: 1rem;
+  border: 1px solid $secondary-color;
+  padding: 1rem;
   border-radius: 8px;
-
 }
-.checkbox__body{
+
+.checkbox__body {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  & > span > {
+    label {
+      font-family: $font-family-bold;
+      color: $primary-color;
+    }
+    p {
+      color: $neutral-color;
+      margin-top: 0.3rem;
+    }
+  }
+  span {
+    color: $secondary-color;
+    font-weight: 500;
+  }
 }
+
+

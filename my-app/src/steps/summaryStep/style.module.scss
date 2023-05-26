@@ -1,0 +1,46 @@
+@import "../../variables.scss";
+.summary__conatiner {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: $alabaster-color;
+  border-radius: 8px;
+  padding: 1rem;
+
+  .plan__section{
+    font-family: $font-family-bold;
+    color:$primary-color;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .addon__section{
+    color: $neutral-color;
+    font-size: 14px;
+    margin-top: 1rem;
+    & > p{
+      color:$primary-color;
+    }
+  }
+}
+
+.plan__section,
+.addon__section,
+.total__section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total__section{
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  .total__label{
+    color: $neutral-color;
+    font-size: 14px;
+
+  }
+  .total__price{
+    font-family: $font-family-bold;
+    color:$secondary-color;
+    font-size: 16px;
+  }
+
+}

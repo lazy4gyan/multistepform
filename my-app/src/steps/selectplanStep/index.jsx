@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useForm } from "react-hook-form";
 import { useAppState } from "../../state";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Button,
   Field,
@@ -64,7 +64,7 @@ const SelectPlanPage = forwardRef((props, ref) => {
           <label
             htmlFor="planType"
             className={
-              watch("planType") ?styles.blur__text:styles.highlight__text
+              watch("planType") ? styles.blur__text : styles.highlight__text
             }
           >
             Monthly
@@ -79,7 +79,12 @@ const SelectPlanPage = forwardRef((props, ref) => {
             Yearly
           </label>
         </div>
-        <Button>Next</Button>
+        <section className="button__wrapper">
+        <Link to="/">
+            Go Back
+          </Link>
+          <Button>Next Step</Button>
+        </section>
       </Form>
       <DevTool control={control} />
     </section>

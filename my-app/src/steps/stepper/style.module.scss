@@ -1,12 +1,22 @@
+.stepper__container {
+  background-image: url("../../assets/images/bg-sidebar-desktop.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 16.25rem;
+  padding: 1.5rem 1rem;
+  border-radius: 8px;
+}
+
 .navbar__list {
   display: flex;
   flex-direction: column;
   list-style-type: none;
   gap: 1rem;
+  padding-top: 1rem;
 }
-.nav__item{
+.nav__item {
   white-space: nowrap;
-
 }
 .nav__item > a {
   text-decoration: none;
@@ -43,7 +53,6 @@
     background-repeat: no-repeat;
     position: absolute;
     width: 100%;
-    // max-height: 100%;
     display: flex;
     justify-content: center;
     top: 0;
@@ -65,11 +74,4 @@
   .step__name {
     display: none;
   }
-}
-.stepper__container {
-  background-image: url("../../assets/images/bg-sidebar-desktop.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100%;
-  width:40%;
 }

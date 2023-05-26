@@ -69,22 +69,26 @@
 // }
 @import "./variables.scss";
 
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body{
+body {
   background-color: $light-gray-color;
   font-family: $font-family-regular;
 }
 
-.form__container{
-  padding:1rem 4rem;
-  width:33rem;
+.form__container {
+  padding: 1rem 4rem;
+  width: 33rem;
+  position: relative !important;
+  // height: 100%;
 }
 
+// .form__container {
+// }
 
 // fieldset {
 //   display: flex;
@@ -155,7 +159,7 @@ a.active {
   display: flex;
   width: 100%;
   margin-top: 0.25rem;
-  font-size: .875em;
+  font-size: 0.875em;
   color: #dc3545;
 }
 
@@ -163,16 +167,34 @@ label {
   display: flex;
 }
 
-.button-row {
+// .button-row {
+//   display: flex;
+//   justify-content: space-between;
+//   width: 100%;
+// }
+
+// .card input[type="radio"]:checked + .card-body {
+//   background-color: #e9ecef;
+// }
+// .card img {
+//   max-width: 100%;
+//   height: auto;
+// }
+
+.button__wrapper {
   display: flex;
   justify-content: space-between;
-  width: 100%;
-}
+  align-items: flex-end;
+  height: 29vh;
+  // &,& > *{border:1px solid red};
 
-.card input[type="radio"]:checked + .card-body {
-  background-color: #e9ecef;
+  a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 38px;
+  }
 }
-.card img {
-  max-width: 100%;
-  height: auto;
+.align__right {
+  margin-left: 18.5rem;//height 21vh
 }

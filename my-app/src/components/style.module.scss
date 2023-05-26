@@ -35,12 +35,50 @@
 .form__checkbox{
     width: 16px;
     height: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid $alabaster-color;
     border-radius: 3px;
     margin-right: 8px;
+    background: $secondary-color;
+
 }
-.form__checkbox:checked {
-    background-color: $secondary-color;
-    color: $secondary-color;
+// .form__checkbox:checked {
+//     color: $secondary-color;
+//   }
+  .form__checkbox[type="checkbox"]:checked {
+    background: blue;
+    color: white;
   }
 
+  // button styles
+  .btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .btn-primary {
+    @extend .btn;
+    background-color:hsl(214, 68%, 33%);
+    color: white;
+    white-space: nowrap;
+  }
+  
+  .btn-secondary {
+    @extend .btn;
+    background-color: $secondary-color;
+    color: white;
+  }
+  
+  .btn-tertiary {
+    @extend .btn;
+    background-color: transparent;
+    color:$primary-color;
+    padding:0;
+    font-size: 14px;
+    text-decoration: underline;
+    &:hover{
+      color:$secondary-color;
+    }
+  }
