@@ -4,7 +4,7 @@
 import { NavLink, useLocation } from "react-router-dom";
 import { useAppState } from "../../state";
 import { useEffect, useState } from "react";
-import styles from "./style.module.scss"
+import "./stepper.scss"
 
 export const Stepper = ({ onStepChange }) => {
   const [state] = useAppState();
@@ -17,7 +17,9 @@ export const Stepper = ({ onStepChange }) => {
   }, [location]);
 
   const getLinkClass = ({ isActive }) =>
-    `nav-link ${isActive ? "active" : undefined}`;
+    `${isActive ? "active" : undefined}`;
+  // let isActive = false;
+  // const getLinkClass = ({ val }) => val ? isActive = true: isActive=false;
 
   const personalInfoMissing = !state.name || !state.email || !state.phoneNumber;
 
@@ -53,28 +55,30 @@ export const Stepper = ({ onStepChange }) => {
       state: {},
     },
   ];
+  // console.log(isActive)
 
   return (
-    <nav className={styles.stepper__container}>
-        <ol className={styles.navbar__list}>
+    <nav className={'stepper__container'}>
+        <ol className={'navbar__list'}>
           {navLinks.map(({ url, name, state },index) => {
             return (
-              <li className={styles.nav__item} key={url}>
-                {/* <StepState
+              <li className={`nav__item`} key={url}>
+                <StepState
                   showWarning={state.showWarning}
                   showSuccess={state.showSuccess}
-                /> */}
+                />
                 <NavLink
                   end
                   to={url}
                   className={getLinkClass}
+                  // activeClassName="active"
                   onClick={onStepChange}
                 >
-                  <div className={styles.step__container}>
-                    <span className={styles.step__number}>{index+1}</span>
-                    <span className={styles.step__name}>
-                      <p>STEP {index+1}</p>
-                      <p>{name.toUpperCase()}</p>
+                  <div className={`step__container`}>
+                    <span className={'step__number'}>{index+1}</span>
+                    <span className={'step__name'}>
+                      <p className={'step'}>STEP {index+1}</p>
+                      <p className={'name'}>{name.toUpperCase()}</p>
                     </span>
                   </div>
                 </NavLink>

@@ -1,11 +1,3 @@
-// .card input[type="radio"]:checked + .card-body {
-//     background-color: #e9ecef;
-//   }
-//   .card img {
-//     width:50px;
-//     max-width: 100%;
-//     height: auto;
-//   }
 @import "../../variables.scss";
 
 .card {
@@ -26,7 +18,7 @@
     .card__title {
       font-size: 16;
       margin-bottom: 0.5rem;
-      color:$primary-color;
+      color: $primary-color;
     }
 
     .card__text {
@@ -35,8 +27,8 @@
       color: $neutral-color;
     }
 
-    .mb{
-      margin-bottom: .5rem;
+    .mb {
+      margin-bottom: 0.5rem;
     }
 
     .card__offer {
@@ -47,23 +39,27 @@
     }
   }
 }
+.card:hover {
+  border-color: hsl(229, 24%, 67%);
+}
 
+.card.selected {
+  border-color: hsl(229, 24%, 67%);
+  background-color: hsl(229, 24%, 87%);
+}
 
-input[type="radio"] {
+.radio__input {
   display: none;
 }
-// .card.selected {
-//   border: 2px solid blue;
-// }
 
+@media screen and (max-width: 767px) {
+  .card {
+    display: flex;
+    flex-direction: row;
 
-// .radio__input {
-//   display: none;
-// }
-// input[type="radio"]:checked + .card {
-//     background-color: red;
-    
-//   }
-
-  // card selection is also not working
-  // card bottom spacing
+    .card__body {
+      margin-top: 0;
+      margin-left: -1rem;
+    }
+  }
+}

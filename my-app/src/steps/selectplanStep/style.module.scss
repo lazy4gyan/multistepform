@@ -32,3 +32,17 @@
   font-size: 12px;
   margin-bottom:-1.5rem;
 }
+
+@media screen and (max-width: 767px) {
+.cards__container{
+  // background-color: red;
+  display: flex;
+  flex-direction: column;
+}
+.form__plantype{
+  margin: .8rem 0;
+}
+}
+
+
+

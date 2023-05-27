@@ -35,15 +35,8 @@
 .form__checkbox{
     width: 16px;
     height: 16px;
-    border: 1px solid $alabaster-color;
-    border-radius: 3px;
-    margin-right: 8px;
-    background: $secondary-color;
-
 }
-// .form__checkbox:checked {
-//     color: $secondary-color;
-//   }
+
   .form__checkbox[type="checkbox"]:checked {
     background: blue;
     color: white;

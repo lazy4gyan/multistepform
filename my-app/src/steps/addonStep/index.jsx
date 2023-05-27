@@ -39,7 +39,7 @@ const AddOnPage = forwardRef((props, ref) => {
         <section className={styles.box}>
           {addOnPlanOptions.map((plan) => {
             return (
-              <div className={styles.checkbox__container} key={`${plan.label}`}>
+              <div className={`${styles.checkbox__container} ${watch(`${plan.code}`)? styles.selected:""}` } key={`${plan.label}`}>
                 <Checkbox {...register(`${plan.code}`)} id={`${plan.label}`} />
                 <div className={styles.checkbox__body}>
                   <span>

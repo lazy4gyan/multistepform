@@ -75,7 +75,7 @@ const InformationPage = forwardRef((props, ref) => {
           <Button>Next Step</Button>
         </section>
       </Form>
-      <DevTool control={control} />
+      {/* <DevTool control={control} /> */}
     </section>
   );
 });

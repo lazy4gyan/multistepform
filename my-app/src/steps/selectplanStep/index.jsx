@@ -33,6 +33,10 @@ const SelectPlanPage = forwardRef((props, ref) => {
     navigate("/addon");
   };
 
+  // const selected = {
+  //   border: "2px solid blue";
+  // }
+
   return (
     <section className="form__container">
       <Form onSubmit={handleSubmit(saveData)}>

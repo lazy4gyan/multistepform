@@ -16,29 +16,11 @@ body {
   width: 33rem;
   position: relative !important;
 }
-
-// .section-row {
-//   display: flex;
-//   width: 100%;
-
-//   div {
-//     display: flex;
-//     margin-bottom: 0.5rem;
-
-//     &:first-child {
-//       width: 50%;
-//     }
-
-//     &:last-child {
-//       width: 50%;
-//     }
-//   }
-// }
-
-.title-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+@media screen and (max-width: 767px) {
+  .form__container {
+    width: fit-content;
+    padding: 2rem 1rem;
+  }
 }
 
 form {
@@ -49,24 +31,6 @@ form {
   display: flex;
   margin: 24px 0 auto 0;
 }
-
-a.active {
-  color: red;
-}
-
-// .stepper {
-//   display: flex;
-//   padding: 24px;
-//   width: 100%;
-
-//   ol {
-//     margin: 0;
-//     padding: 0;
-//     display: flex;
-//     width: 100%;
-//     justify-content: space-between;
-//   }
-// }
 
 .error {
   display: flex;
@@ -80,95 +44,46 @@ a.active {
 label {
   display: flex;
 }
-
-// .button-row {
-//   display: flex;
-//   justify-content: space-between;
-//   width: 100%;
-// }
-
-// .card input[type="radio"]:checked + .card-body {
-//   background-color: #e9ecef;
-// }
-// .card img {
-//   max-width: 100%;
-//   height: auto;
-// }
-
-// .button__wrapper {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: flex-end;
-
-  
-
-//   a {
-//     text-decoration: none;
-//     display: flex;
-//     align-items: center;
-//     height: 38px;
-//   }
-// }
-
-// .info{
-//   height: 28vh;
-//   margin-left: 18.5rem;//height 21vh
-
-//   }
-//   .selectplan{
-//   height:25vh;
-// // height:12rem;
-//   }
-//   .addon{
-//     height: 25.7vh;
-
-//   }
-//   .summary{
-//     height: 49vh;
-//     // margin: 7rem 8 0;
-//     // height:41.7vh
-//   }
-
-
-// .btn-spacing{
-//   height:20vh;
-// }
-// .btn-spacing__selectplan{
-//   height: 20vh;
-// }
-// .btn-spacing__planerror{
-//   height: 24.315vh;
-// }
-// .btn-spacing__plantype{
-//   height:20.8vh;
-// }
-
 .button__wrapper {
   position: fixed;
   bottom: 8rem;
-  // left: 50%;
-  // right:50%;
-  // transform: translateX(-50%);
   display: inline-flex;
-  // gap:25rem;
-  width:25rem;
+  width: 25rem;
   justify-content: space-between;
 
-  a{
+  a {
     text-decoration: none;
     display: flex;
     align-items: center;
     height: 38px;
-    // margin-left: 1rem;
     margin-right: 5rem;
   }
 }
 
-.align__right{
-  height:38px;
+.align__right {
+  height: 38px;
   justify-content: flex-end;
 }
 
-.disable-button{
-  padding:.5rem 1rem
+.disable-button {
+  padding: 0.5rem 1rem;
+}
+
+@media screen and (max-width: 767px) {
+  .button__wrapper {
+    background: white;
+    height: 10vh;
+    padding: 1rem 0;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+  }
+  .align__right > button {
+    position: fixed;
+    right: 0rem;
+  }
+  button,
+  a {
+    margin: 0 3rem;
+  }
 }

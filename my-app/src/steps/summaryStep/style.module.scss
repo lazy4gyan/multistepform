@@ -44,3 +44,13 @@
   }
 
 }
+@media screen and (max-width: 767px) {
+  .total__section{
+    margin-bottom: 1rem;
+  }
+  .plan__section{
+    button{
+      margin:0;
+    }
+  }
+}

@@ -1,15 +1,27 @@
 .layout {
-    display: flex;
-    flex-direction: row;
-    height:80vh;
-    margin:3rem 0;
+  display: flex;
+  flex-direction: row;
+  height: 80vh;
+  margin: 3rem 0;
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.mobile__layoutConatiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .stepper__container {
+    width: 100%;
+    height: 26vh;
+  }
+
+  .page__container {
+    width: 80%;
+    margin-top: -3.2rem;
     background-color: white;
-    padding: .5rem;
     border-radius: 8px;
   }
-  
-  @media (max-width: 768px) {
-    .layout {
-      flex-direction: column;
-    }
-  }
+}
