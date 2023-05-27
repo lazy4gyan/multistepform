@@ -1,14 +1,10 @@
 /* eslint-disable no-unused-vars */
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { useAppState } from "../../state";
 import { Link, useNavigate } from "react-router-dom";
 import {
   Button,
-  Field,
   Form,
-  Input,
-  Section,
-  SectionRow,
   TitelDescription,
   Title,
 } from "../../components";
@@ -44,22 +40,39 @@ const SelectPlanPage = forwardRef((props, ref) => {
         <TitelDescription>
           You have the option of monthly or yearly billing.
         </TitelDescription>
-        <div className={styles.cards__container}>
-          {planOptions.map((plan) => {
-            return (
-              <Card
-                key={plan.label}
-                {...register(`${plan.name}`)}
-                value={plan.value}
-                image={plan.imgSrc}
-                title={plan.label}
-                description="2 months free"
-                price={plan.value}
-                isYearly={watch("planType")}
-              />
-            );
-          })}
-        </div>
+        <section>
+          {errors.selectPlan && (
+            <label htmlFor="selectPlan" className={styles.selectPlan__error}>
+              {errors.selectPlan.message}
+            </label>
+          )}
+          <div className={styles.cards__container}>
+            <Controller
+              name="selectPlan"
+              control={control}
+              rules={{ required: "Please select a plan to continue." }}
+              render={({ field: { onChange, value } }) => (
+                <>
+                  {planOptions.map((plan) => (
+                    <Card
+                      key={plan.label}
+                      className={value === plan.value ? 'selected' : ''}
+                      onChange={(e) => onChange(e.target.value)}
+                      checked={value === plan.value}
+                      value={plan.value}
+                      image={plan.imgSrc}
+                      title={plan.label}
+                      description="2 months free"
+                      price={plan.value}
+                      isYearly={watch("planType")}
+                    />
+                  ))}
+                </>
+              )}
+            />
+          </div>
+        </section>
+
         <div className={styles.form__plantype}>
           <label
             htmlFor="planType"
@@ -80,9 +93,7 @@ const SelectPlanPage = forwardRef((props, ref) => {
           </label>
         </div>
         <section className="button__wrapper">
-        <Link to="/">
-            Go Back
-          </Link>
+          <Link to="/">Go Back</Link>
           <Button>Next Step</Button>
         </section>
       </Form>

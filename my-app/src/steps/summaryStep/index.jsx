@@ -75,7 +75,12 @@ const SummaryPage = () => {
                     })`
                   : "Select Plan"}
               </label>
-              <Button variant={"tertiary"} onClick={() => navigate("/selectplan")}>Change</Button>
+              <Button
+                variant={"tertiary"}
+                onClick={() => navigate("/selectplan")}
+              >
+                Change
+              </Button>
             </section>
             <p>
               {subscription &&
@@ -103,7 +108,7 @@ const SummaryPage = () => {
         {subscription && (
           <section className={styles.total__section}>
             <p className={styles.total__label}>
-              Total(per {state.planType ? "year" : "month"})
+              Total (per {state.planType ? "year" : "month"})
             </p>
             <p className={styles.total__price}>
               +$
@@ -114,11 +119,11 @@ const SummaryPage = () => {
           </section>
         )}
         <section className="button__wrapper">
-        <Link to="/addon">
-            Go Back
-          </Link>
-          {/* <Button variant={"tertiary"}></Button> */}
-          <Button variant={"secondary"} disabled={disableSubmit}>
+          <Link to="/addon">Go Back</Link>
+          <Button
+            variant={disableSubmit ? "disable-button" : "secondary"}
+            disabled={disableSubmit}
+          >
             Confirm
           </Button>
         </section>

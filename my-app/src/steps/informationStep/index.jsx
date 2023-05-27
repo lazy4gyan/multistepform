@@ -12,7 +12,6 @@ import {
 } from "../../components";
 import { DevTool } from "@hookform/devtools";
 import { forwardRef } from "react";
-import styles from "./style.module.scss";
 
 const InformationPage = forwardRef((props, ref) => {
   const [state, setState] = useAppState();
@@ -28,6 +27,10 @@ const InformationPage = forwardRef((props, ref) => {
     setState({ ...state, ...data });
     navigate("/selectplan");
   };
+
+  // const btnSpacing = errors > 0 ? 'btn-spacing':'';
+  const btnSpacing = Object.keys(errors).length > 0 ? 'btn-spacing' : '';
+  console.log(errors,btnSpacing)
 
   return (
     <section className="form__container">
@@ -68,7 +71,7 @@ const InformationPage = forwardRef((props, ref) => {
             id="phone-number"
           />
         </Field>
-        <section className="button__wrapper align__right">
+        <section className={`button__wrapper align__right`}>
           <Button>Next Step</Button>
         </section>
       </Form>

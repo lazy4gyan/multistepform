@@ -49,12 +49,21 @@
 }
 
 
-.radio__input {
+input[type="radio"] {
   display: none;
 }
-input[type="radio"]:checked + .card {
-    background-color: red;
-  }
+// .card.selected {
+//   border: 2px solid blue;
+// }
+
+
+// .radio__input {
+//   display: none;
+// }
+// input[type="radio"]:checked + .card {
+//     background-color: red;
+    
+//   }
 
   // card selection is also not working
   // card bottom spacing
