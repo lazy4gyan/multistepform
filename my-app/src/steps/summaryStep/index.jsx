@@ -24,7 +24,6 @@ const SummaryPage = () => {
     console.info(data);
     // Submit data to the server
     navigate("/thanks");
-
   };
 
   const data = [

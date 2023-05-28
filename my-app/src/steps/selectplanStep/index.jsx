@@ -8,7 +8,6 @@ import {
   TitelDescription,
   Title,
 } from "../../components";
-import { DevTool } from "@hookform/devtools";
 import Card from "../../components/select-card";
 import ToggleSwitch from "../../components/toggle-switch";
 import { planOptions } from "../../constants";
@@ -32,10 +31,6 @@ const SelectPlanPage = forwardRef((props, ref) => {
     setState({ ...state, ...data });
     navigate("/addon");
   };
-
-  // const selected = {
-  //   border: "2px solid blue";
-  // }
 
   return (
     <section className="form__container">
@@ -101,7 +96,6 @@ const SelectPlanPage = forwardRef((props, ref) => {
           <Button>Next Step</Button>
         </section>
       </Form>
-      <DevTool control={control} />
     </section>
   );
 });

@@ -10,7 +10,6 @@ import {
   TitelDescription,
   Title,
 } from "../../components";
-import { DevTool } from "@hookform/devtools";
 import { forwardRef } from "react";
 
 const InformationPage = forwardRef((props, ref) => {
@@ -18,7 +17,6 @@ const InformationPage = forwardRef((props, ref) => {
   const {
     handleSubmit,
     register,
-    control,
     formState: { errors },
   } = useForm({ defaultValues: state, mode: "onSubmit" });
   const navigate = useNavigate();
@@ -27,10 +25,6 @@ const InformationPage = forwardRef((props, ref) => {
     setState({ ...state, ...data });
     navigate("/selectplan");
   };
-
-  // const btnSpacing = errors > 0 ? 'btn-spacing':'';
-  const btnSpacing = Object.keys(errors).length > 0 ? 'btn-spacing' : '';
-  console.log(errors,btnSpacing)
 
   return (
     <section className="form__container">
@@ -75,7 +69,6 @@ const InformationPage = forwardRef((props, ref) => {
           <Button>Next Step</Button>
         </section>
       </Form>
-      {/* <DevTool control={control} /> */}
     </section>
   );
 });

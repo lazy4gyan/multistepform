@@ -9,7 +9,6 @@ import {
   TitelDescription,
   Title,
 } from "../../components";
-import { DevTool } from "@hookform/devtools";
 import { addOnPlanOptions } from "../../constants";
 import { forwardRef } from "react";
 import styles from "./style.module.scss";
@@ -63,7 +62,6 @@ const AddOnPage = forwardRef((props, ref) => {
           <Button>Next Step</Button>
         </section>
       </Form>
-      <DevTool control={control} />
     </section>
   );
 });
