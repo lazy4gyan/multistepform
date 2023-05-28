@@ -23,6 +23,8 @@ const SummaryPage = () => {
   const submitData = (data) => {
     console.info(data);
     // Submit data to the server
+    navigate("/thanks");
+
   };
 
   const data = [

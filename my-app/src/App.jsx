@@ -7,6 +7,7 @@ import AddOnPage from "./steps/addonStep";
 import SummaryPage from "./steps/summaryStep";
 import { Stepper } from "./steps/stepper";
 import AppLayout from "./components/app-layout/AppLayout";
+import ThanksPage from "./steps/thanksStep";
 
 const App = () => {
   const buttonRef = useRef();
@@ -27,6 +28,7 @@ const App = () => {
               />
               <Route path="/addon" element={<AddOnPage ref={buttonRef} />} />
               <Route path="/summary" element={<SummaryPage />} />
+              <Route path="/thanks" element={<ThanksPage />} />
             </Routes>
           </AppLayout>
         </Router>
