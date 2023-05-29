@@ -1,4 +1,4 @@
-@import "../../variables.scss";
+@import "../../utils/variables.scss";
 
 .card {
   display: flex;
@@ -6,6 +6,7 @@
   padding: 1rem 1rem 0 1rem;
   border: 1px solid $light-gray-color;
   border-radius: 8px;
+  cursor: pointer;
 
   .card__img {
     width: 40px;
@@ -39,12 +40,13 @@
     }
   }
 }
-.card:hover {
+
+.card:hover,
+.card.selected {
   border-color: hsl(229, 24%, 67%);
 }
 
 .card.selected {
-  border-color: hsl(229, 24%, 67%);
   background-color: hsl(229, 24%, 87%);
 }
 
@@ -56,7 +58,6 @@
   .card {
     display: flex;
     flex-direction: row;
-
     .card__body {
       margin-top: 0;
       margin-left: -1rem;

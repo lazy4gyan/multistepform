@@ -1,4 +1,4 @@
-@import "../../variables.scss";
+@import "../../utils/variables.scss";
 .box {
   margin-top: 2rem;
   display: grid;
@@ -36,8 +36,6 @@
   }
 }
 
-.selected{
-  background-color:$alabaster-color;
+.selected {
+  background-color: $alabaster-color;
 }
-
-

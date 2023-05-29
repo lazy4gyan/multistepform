@@ -1,11 +1,11 @@
 import { useRef } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { AppProvider } from "./state";
+import { AppProvider } from "./components/state";
+import { Stepper } from "./steps/stepper";
 import InformationPage from "./steps/informationStep";
 import SelectPlanPage from "./steps/selectplanStep";
 import AddOnPage from "./steps/addonStep";
 import SummaryPage from "./steps/summaryStep";
-import { Stepper } from "./steps/stepper";
 import AppLayout from "./components/app-layout/AppLayout";
 import ThanksPage from "./steps/thanksStep";
 
@@ -15,18 +15,15 @@ const App = () => {
     buttonRef.current?.click();
   };
   return (
-    <main style={{display:"flex",justifyContent:"center",alignItems:"center",height:"100%"}}>
+    <main>
       <AppProvider>
         <Router>
           <AppLayout>
             <Stepper onStepChange={onStepChange} />
             <Routes>
-              <Route path="/" element={<InformationPage ref={buttonRef} />} />
-              <Route
-                path="/selectplan"
-                element={<SelectPlanPage ref={buttonRef} />}
-              />
-              <Route path="/addon" element={<AddOnPage ref={buttonRef} />} />
+              <Route path="/" element={<InformationPage />} />
+              <Route path="/selectplan" element={<SelectPlanPage />} />
+              <Route path="/addon" element={<AddOnPage />} />
               <Route path="/summary" element={<SummaryPage />} />
               <Route path="/thanks" element={<ThanksPage />} />
             </Routes>

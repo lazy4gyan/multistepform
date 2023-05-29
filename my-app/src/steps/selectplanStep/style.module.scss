@@ -1,4 +1,4 @@
-@import "../../variables.scss";
+@import "../../utils/variables.scss";
 .cards__container {
   display: flex;
   gap: 10px;
@@ -27,22 +27,18 @@
   color: $neutral-color;
 }
 
-.selectPlan__error{
-  color:red;
+.selectPlan__error {
+  color: red;
   font-size: 12px;
-  margin-bottom:-1.5rem;
+  margin-bottom: -1.5rem;
 }
 
 @media screen and (max-width: 767px) {
-.cards__container{
-  // background-color: red;
-  display: flex;
-  flex-direction: column;
+  .cards__container {
+    display: flex;
+    flex-direction: column;
+  }
+  .form__plantype {
+    margin: 0.8rem 0;
+  }
 }
-.form__plantype{
-  margin: .8rem 0;
-}
-}
-
-
-

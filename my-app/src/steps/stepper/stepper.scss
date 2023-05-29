@@ -1,4 +1,4 @@
-@import "../../variables.scss";
+@import "../../utils/variables.scss";
 .stepper__container {
   background-image: url("../../assets/images/bg-sidebar-desktop.svg");
   background-size: cover;
@@ -96,8 +96,7 @@
 
 .warning-sign {
   font-family: $font-family-bold;
-  // color:$primary-color;
-  color:red;
+  color: $error-color;
   font-weight: 600;
   font-size: 20px;
 }

@@ -1,21 +1,13 @@
-/* eslint-disable no-unused-vars */
 import { Controller, useForm } from "react-hook-form";
-import { useAppState } from "../../state";
+import { useAppState } from "../../components/state";
 import { Link, useNavigate } from "react-router-dom";
-import {
-  Button,
-  Form,
-  TitelDescription,
-  Title,
-} from "../../components";
+import { Button, Form, TitelDescription, Title } from "../../components";
+import { planOptions } from "../../utils/constants";
 import Card from "../../components/select-card";
 import ToggleSwitch from "../../components/toggle-switch";
-import { planOptions } from "../../constants";
-import { forwardRef } from "react";
 import styles from "./style.module.scss";
 
-// eslint-disable-next-line react/display-name
-const SelectPlanPage = forwardRef((props, ref) => {
+const SelectPlanPage = () => {
   const [state, setState] = useAppState();
   const {
     handleSubmit,
@@ -55,7 +47,7 @@ const SelectPlanPage = forwardRef((props, ref) => {
                   {planOptions.map((plan) => (
                     <Card
                       key={plan.label}
-                      className={value === plan.value ? 'selected' : ''}
+                      className={value === plan.value ? "selected" : ""}
                       onChange={(e) => onChange(e.target.value)}
                       checked={value === plan.value}
                       value={plan.value}
@@ -71,7 +63,6 @@ const SelectPlanPage = forwardRef((props, ref) => {
             />
           </div>
         </section>
-
         <div className={styles.form__plantype}>
           <label
             htmlFor="planType"
@@ -98,6 +89,6 @@ const SelectPlanPage = forwardRef((props, ref) => {
       </Form>
     </section>
   );
-});
+};
 
 export default SelectPlanPage;

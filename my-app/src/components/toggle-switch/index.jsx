@@ -1,7 +1,5 @@
-import "./style.scss"
-// export default ToggleSwitch;
-/* eslint-disable react/display-name */
 import { forwardRef } from "react";
+import "./style.scss"
 
 const ToggleSwitch = forwardRef((props, ref) => {
   return (

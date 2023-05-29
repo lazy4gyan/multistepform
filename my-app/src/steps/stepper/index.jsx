@@ -1,23 +1,16 @@
-/* eslint-disable react/prop-types */
 import { NavLink, useLocation } from "react-router-dom";
-import { useAppState } from "../../state";
+import { useAppState } from "../../components/state";
 import { useEffect, useState } from "react";
 import "./stepper.scss";
 
 export const Stepper = ({ onStepChange }) => {
-  const [state] = useAppState();
-
-  const location = useLocation();
   const [steps, setSteps] = useState([]);
-
-  useEffect(() => {
-    setSteps((steps) => [...steps, location.pathname]);
-  }, [location]);
-
-  const personalInfoMissing = !state.name || !state.email || !state.phoneNumber;
+  const [state] = useAppState();
+  const location = useLocation();
 
   const isVisited = (step) =>
     steps.includes(step) && location.pathname !== step;
+  const personalInfoMissing = !state.name || !state.email || !state.phoneNumber;
 
   const navLinks = [
     {
@@ -43,6 +36,11 @@ export const Stepper = ({ onStepChange }) => {
       state: {},
     },
   ];
+
+  useEffect(() => {
+    setSteps((steps) => [...steps, location.pathname]);
+  }, [location]);
+
   const currentStep = navLinks.find((link) => link.url === location.pathname);
 
   return (

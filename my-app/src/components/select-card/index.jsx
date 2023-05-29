@@ -1,6 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/display-name */
-// /* eslint-disable react/prop-types */
 import  { forwardRef } from 'react';
 import "./card-style.scss"
 const Card = forwardRef(({ image, title, description, price,isYearly,className, ...props }, ref) => {

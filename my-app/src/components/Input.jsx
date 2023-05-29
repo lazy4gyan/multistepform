@@ -1,4 +1,3 @@
-/* eslint-disable react/display-name */
 import { forwardRef } from "react";
 import styles from "./style.module.scss";
 

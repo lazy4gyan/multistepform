@@ -39,4 +39,6 @@ export const addOnPlanOptions = [
       value: "2",
     },
   ];
+
+export const BREAK_POINT = 768;
   

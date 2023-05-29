@@ -1,8 +1,6 @@
-/* eslint-disable react/prop-types */
 import { forwardRef } from "react";
 import styles from "./style.module.scss"
 
-// eslint-disable-next-line react/display-name
 export const Checkbox = forwardRef((props, ref) => {
     const {label,id} = props;
   return (

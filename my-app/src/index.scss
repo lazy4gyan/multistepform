@@ -1,4 +1,4 @@
-@import "./variables.scss";
+@import "./utils/variables.scss";
 
 * {
   box-sizing: border-box;
@@ -9,6 +9,13 @@
 body {
   background-color: $light-gray-color;
   font-family: $font-family-regular;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .form__container {
@@ -37,13 +44,14 @@ form {
   width: 100%;
   margin-top: 0.25rem;
   font-size: 0.875em;
-  color: #dc3545;
+  color: $error-color;
   justify-content: flex-end;
 }
 
 label {
   display: flex;
 }
+
 .button__wrapper {
   position: fixed;
   bottom: 8rem;

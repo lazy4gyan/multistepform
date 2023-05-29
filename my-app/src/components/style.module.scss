@@ -1,4 +1,4 @@
-@import "../variables.scss";
+@import "../utils/variables.scss";
 
 .form__input {
   width: 100%;
@@ -6,76 +6,75 @@
   font-size: 16px;
   border: 2px solid #ccc;
   border-radius: 4px;
-  &:focus{
+  &:focus {
     border-color: #ababab;
     outline: none;
   }
 }
 
 .form__label {
-    font-size: 14px;
-    padding:.5rem 0;
-    margin:1rem 0 0 0;
-    color:$primary-color;
+  font-size: 14px;
+  padding: 0.5rem 0;
+  margin: 1rem 0 0 0;
+  color: $primary-color;
 }
 
-.form__title{
-    font-size: 18px;
-    font-family: $font-family-bold;
-    color:$primary-color;
-    margin-bottom:0.5rem;
+.form__title {
+  font-size: 18px;
+  font-family: $font-family-bold;
+  color: $primary-color;
+  margin-bottom: 0.5rem;
 }
 
-.form__description{
-    font-size: 14px;
-    color:$neutral-color;
-    margin: .5rem 0 1rem 0;
+.form__description {
+  font-size: 14px;
+  color: $neutral-color;
+  margin: 0.5rem 0 1rem 0;
 }
 
-.center{
+.center {
   text-align: center;
 }
 
-.form__checkbox{
-    width: 16px;
-    height: 16px;
+.form__checkbox {
+  width: 16px;
+  height: 16px;
 }
 
-  .form__checkbox[type="checkbox"]:checked {
-    background: blue;
-    color: white;
-  }
+.form__checkbox[type="checkbox"]:checked {
+  background: blue;
+  color: white;
+}
 
-  // button styles
-  .btn {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 0.25rem;
-    font-size: 1rem;
-    cursor: pointer;
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-primary {
+  @extend .btn;
+  background-color: hsl(214, 68%, 33%);
+  color: white;
+  white-space: nowrap;
+}
+
+.btn-secondary {
+  @extend .btn;
+  background-color: $secondary-color;
+  color: white;
+}
+
+.btn-tertiary {
+  @extend .btn;
+  background-color: transparent;
+  color: $primary-color;
+  padding: 0;
+  font-size: 14px;
+  text-decoration: underline;
+  &:hover {
+    color: $secondary-color;
   }
-  
-  .btn-primary {
-    @extend .btn;
-    background-color:hsl(214, 68%, 33%);
-    color: white;
-    white-space: nowrap;
-  }
-  
-  .btn-secondary {
-    @extend .btn;
-    background-color: $secondary-color;
-    color: white;
-  }
-  
-  .btn-tertiary {
-    @extend .btn;
-    background-color: transparent;
-    color:$primary-color;
-    padding:0;
-    font-size: 14px;
-    text-decoration: underline;
-    &:hover{
-      color:$secondary-color;
-    }
-  }
+}

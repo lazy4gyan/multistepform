@@ -1,6 +1,5 @@
-/* eslint-disable no-unused-vars */
 import { useForm } from "react-hook-form";
-import { useAppState } from "../../state";
+import { useAppState } from "../../components/state";
 import { Link, useNavigate } from "react-router-dom";
 import {
   Button,
@@ -9,13 +8,11 @@ import {
   TitelDescription,
   Title,
 } from "../../components";
-import { addOnPlanOptions } from "../../constants";
-import { forwardRef } from "react";
+import { addOnPlanOptions } from "../../utils/constants";
 import styles from "./style.module.scss";
-// eslint-disable-next-line react/display-name
-const AddOnPage = forwardRef((props, ref) => {
+const AddOnPage = () => {
   const [state, setState] = useAppState();
-  const { handleSubmit, register, control, watch } = useForm({
+  const { handleSubmit, register, watch } = useForm({
     defaultValues: state,
     mode: "onSubmit",
   });
@@ -38,7 +35,12 @@ const AddOnPage = forwardRef((props, ref) => {
         <section className={styles.box}>
           {addOnPlanOptions.map((plan) => {
             return (
-              <div className={`${styles.checkbox__container} ${watch(`${plan.code}`)? styles.selected:""}` } key={`${plan.label}`}>
+              <div
+                className={`${styles.checkbox__container} ${
+                  watch(`${plan.code}`) ? styles.selected : ""
+                }`}
+                key={`${plan.label}`}
+              >
                 <Checkbox {...register(`${plan.code}`)} id={`${plan.label}`} />
                 <div className={styles.checkbox__body}>
                   <span>
@@ -56,14 +58,12 @@ const AddOnPage = forwardRef((props, ref) => {
           })}
         </section>
         <section className="button__wrapper">
-        <Link to="/selectplan">
-            Go Back
-          </Link>
+          <Link to="/selectplan">Go Back</Link>
           <Button>Next Step</Button>
         </section>
       </Form>
     </section>
   );
-});
+};
 
 export default AddOnPage;

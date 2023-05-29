@@ -1,5 +1,4 @@
 import styles from "./style.module.scss";
-
 export const Title = ({ children }) => {
   return (
     <header className={styles.form__title}>
@@ -7,5 +6,3 @@ export const Title = ({ children }) => {
     </header>
   );
 };
-
-// export default Title;

@@ -1,6 +1,5 @@
-/* eslint-disable react/display-name */
 import { useForm } from "react-hook-form";
-import { useAppState } from "../../state";
+import { useAppState } from "../../components/state";
 import { useNavigate } from "react-router-dom";
 import {
   Button,
@@ -10,9 +9,8 @@ import {
   TitelDescription,
   Title,
 } from "../../components";
-import { forwardRef } from "react";
 
-const InformationPage = forwardRef((props, ref) => {
+const InformationPage = () => {
   const [state, setState] = useAppState();
   const {
     handleSubmit,
@@ -22,6 +20,7 @@ const InformationPage = forwardRef((props, ref) => {
   const navigate = useNavigate();
 
   const saveData = (data) => {
+    console.log(data);
     setState({ ...state, ...data });
     navigate("/selectplan");
   };
@@ -35,7 +34,7 @@ const InformationPage = forwardRef((props, ref) => {
         </TitelDescription>
         <Field label="Name" error={errors?.name}>
           <Input
-            {...register("name", { required: "This field is required" })}
+            {...register("name", { required: "This field is required." })}
             id="name"
           />
         </Field>
@@ -43,7 +42,7 @@ const InformationPage = forwardRef((props, ref) => {
         <Field label="Email" error={errors?.email}>
           <Input
             {...register("email", {
-              required: "This field is required",
+              required: "This field is required.",
               pattern: {
                 value: /^\S+@\S+$/i,
                 message: "Invalid email format.",
@@ -56,7 +55,7 @@ const InformationPage = forwardRef((props, ref) => {
         <Field label="Phone Number" error={errors?.phoneNumber}>
           <Input
             {...register("phoneNumber", {
-              required: "This field is required",
+              required: "This field is required.",
               pattern: {
                 value: /^\+[1-9]{1}[0-9]{3,14}$/,
                 message: "Invalid phone number.",
@@ -71,6 +70,6 @@ const InformationPage = forwardRef((props, ref) => {
       </Form>
     </section>
   );
-});
+};
 
 export default InformationPage;

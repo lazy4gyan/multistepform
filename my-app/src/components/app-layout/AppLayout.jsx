@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
+import { BREAK_POINT } from "../../utils/constants";
 import styles from "./style.module.scss";
 const AppLayout = ({ children }) => {
   const [windowSize, setWindowSize] = useState(getWindowDimensions());
@@ -24,7 +24,7 @@ const AppLayout = ({ children }) => {
 
   return (
     <>
-      {windowSize.width >= 768 ? (
+      {windowSize.width >= BREAK_POINT ? (
         <section className={styles.layout}>{children}</section>
       ) : (
         <section className={styles.mobile__layoutConatiner}>

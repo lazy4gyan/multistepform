@@ -1,13 +1,12 @@
 import { useForm } from "react-hook-form";
-import { useAppState } from "../../state";
+import { useAppState } from "../../components/state";
 import { Button, Form, TitelDescription, Title } from "../../components";
-import { addOnPlanOptions, planOptions } from "../../constants";
+import { addOnPlanOptions, planOptions } from "../../utils/constants";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./style.module.scss";
 
 const SummaryPage = () => {
   const [state] = useAppState();
-
   const { handleSubmit } = useForm({ defaultValues: state });
   const navigate = useNavigate();
 
@@ -22,7 +21,6 @@ const SummaryPage = () => {
 
   const submitData = (data) => {
     console.info(data);
-    // Submit data to the server
     navigate("/thanks");
   };
 
@@ -74,13 +72,13 @@ const SummaryPage = () => {
                   ? `${subscription.label}(${
                       state.planType ? "Yearly" : "Monthly"
                     })`
-                  : "Select Plan"}
+                  : "Please choose a plan that best fits your needs."}
               </label>
               <Button
                 variant={"tertiary"}
                 onClick={() => navigate("/selectplan")}
               >
-                Change
+                {state.selectPlan ? "Change":<label style={{margin:"1rem 0 .5rem 0"}}>Select Plan</label>}
               </Button>
             </section>
             <p>
