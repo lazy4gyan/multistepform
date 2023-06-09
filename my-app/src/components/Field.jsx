@@ -5,7 +5,7 @@ export const Field = ({ children, label, error }) => {
   const id = getChildId(children);
   return (
     <div>
-      <label htmlFor={id} className={styles.form__label}>
+      <label htmlFor={id} aria-label={label} className={styles.form__label}>
         {label}
       </label>
       {children}

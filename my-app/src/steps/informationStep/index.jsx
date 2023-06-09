@@ -36,6 +36,7 @@ const InformationPage = () => {
           <Input
             {...register("name", { required: "This field is required." })}
             id="name"
+            placeholder={'e.g. Stephen King'}
           />
         </Field>
 
@@ -50,6 +51,7 @@ const InformationPage = () => {
             })}
             type="email"
             id="email"
+            placeholder={'e.g. stephenking@lorem.com'}
           />
         </Field>
         <Field label="Phone Number" error={errors?.phoneNumber}>
@@ -57,11 +59,12 @@ const InformationPage = () => {
             {...register("phoneNumber", {
               required: "This field is required.",
               pattern: {
-                value: /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/,
+                value:/^\+[1-9]{1}[0-9]{3,14}$/,
                 message: "Invalid phone number.",
               },
             })}
             id="phone-number"
+            placeholder={'e.g. +1 234 567 890'}
           />
         </Field>
         <section className={`button__wrapper align__right`}>
